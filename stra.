@@ -1,0 +1,8 @@
+flask_todo/
+│
+├── app.py
+├── static/
+│   └── style.css
+└── templates/
+    ├── index.html
+    └── layout.html
