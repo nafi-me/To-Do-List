@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form action="/add" method="POST" class="add-form">
+    <input type="text" name="title" placeholder="Enter a task" required>
+    <button type="submit">Add</button>
+</form>
+
+<ul class="tasks">
+{% for t in tasks %}
+    <li class="{{ 'done' if t.done else '' }}">
+        {{ t.title }}
+        {% if not t.done %}
+        <a href="/done/{{ t.id }}">✔️</a>
+        {% endif %}
+        <a href="/delete/{{ t.id }}">🗑️</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
